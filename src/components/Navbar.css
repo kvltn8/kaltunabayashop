@@ -1,0 +1,127 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--parchment);
+  border-bottom: 1px solid var(--stone-line);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.nav-mark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.nav-mark-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--ink);
+}
+
+.nav-mark-sub {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 3px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nav-links a,
+.nav-link-btn {
+  position: relative;
+  padding-bottom: 4px;
+  color: var(--ink-soft);
+  background: none;
+  border: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.nav-links a::after,
+.nav-link-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: right 0.2s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.nav-link-btn:hover::after {
+  right: 0;
+}
+
+.nav-links a.active {
+  color: var(--ink);
+}
+
+.nav-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  color: var(--ink);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-cart:hover {
+  background: var(--ink);
+  color: var(--parchment);
+}
+
+.nav-cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  background: var(--rosewood);
+  color: var(--parchment);
+  border-radius: 100px;
+  min-width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .nav-mark-sub {
+    display: none;
+  }
+  .nav-links {
+    gap: 14px;
+  }
+}
